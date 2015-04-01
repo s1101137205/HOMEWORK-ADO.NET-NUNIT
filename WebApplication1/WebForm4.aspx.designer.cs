@@ -67,13 +67,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtName;
         
         /// <summary>
-        /// txtAge 控制項。
+        /// txtNum 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAge;
+        protected global::System.Web.UI.WebControls.TextBox txtNum;
+        
+        /// <summary>
+        /// txtTeacher 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTeacher;
         
         /// <summary>
         /// btnAdd 控制項。
@@ -103,13 +112,22 @@ namespace WebApplication1 {
         protected global::System.Web.UI.WebControls.TextBox txtE_Name;
         
         /// <summary>
-        /// txtE_Age 控制項。
+        /// txtE_Num 控制項。
         /// </summary>
         /// <remarks>
         /// 自動產生的欄位。
         /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtE_Age;
+        protected global::System.Web.UI.WebControls.TextBox txtE_Num;
+        
+        /// <summary>
+        /// txtE_Teacher 控制項。
+        /// </summary>
+        /// <remarks>
+        /// 自動產生的欄位。
+        /// 將移動欄位宣告從設計檔案修改為程式碼後置檔案。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtE_Teacher;
         
         /// <summary>
         /// btnEdit 控制項。

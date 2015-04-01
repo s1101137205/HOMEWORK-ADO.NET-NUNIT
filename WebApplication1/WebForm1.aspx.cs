@@ -27,8 +27,8 @@ namespace WebApplication1
                 cn.Open();
                 using (SqlCommand cmd = cn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from employees where Name like @name";
-                    cmd.Parameters.Add(new SqlParameter("@name", "%" + txtSearch.Text + "%"));
+                    cmd.CommandText = "select * from Class1 where Teacher like @Teacher";
+                    cmd.Parameters.Add(new SqlParameter("@Teacher", "%" + txtSearch.Text + "%"));
                     using (SqlDataReader dr = cmd.ExecuteReader())
                     {
                         while ((dr.Read()))

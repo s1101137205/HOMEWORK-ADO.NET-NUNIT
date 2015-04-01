@@ -26,8 +26,8 @@ namespace WebApplication1
             {
                 using (SqlCommand cmd = cn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from employees where Name like @name";
-                    cmd.Parameters.Add(new SqlParameter("@name", "%" + txtSearch.Text + "%"));
+                    cmd.CommandText = "select * from Class1 where Teacher like @Teacher";
+                    cmd.Parameters.Add(new SqlParameter("@Teacher", "%" + txtSearch.Text + "%"));
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -48,8 +48,8 @@ namespace WebApplication1
             {
                 using (SqlCommand cmd = cn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from employees";
-                    cmd.Parameters.Add(new SqlParameter("@name", "%" + txtSearch.Text + "%"));
+                    cmd.CommandText = "select * from Class1";
+                    cmd.Parameters.Add(new SqlParameter("@Teacher", "%" + txtSearch.Text + "%"));
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -64,8 +64,10 @@ namespace WebApplication1
                         da.Fill(ds);
                         DataTable dt = ds.Tables["Table"];
                         DataRow dr = dt.NewRow();
-                        dr["Name"] = txtName.Text;
-                        dr["Age"] = txtAge.Text;
+                        dr["Class_ID"] = txtID.Text;
+                        dr["Class_Name"] = txtName.Text;
+                        dr["Num"] = txtNum.Text;
+                        dr["Teacher"] = txtTeacher.Text;
                         dt.Rows.Add(dr);
                         da.Update(dt);
 
@@ -81,7 +83,7 @@ namespace WebApplication1
             {
                 using (SqlCommand cmd = cn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from employees";
+                    cmd.CommandText = "select * from Class1";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -95,9 +97,11 @@ namespace WebApplication1
                         ds.Clear();
                         da.Fill(ds);
                         DataTable dt = ds.Tables[0];
-                        DataRow dr = dt.Select(string.Format("EmployeeID = {0}", txtE_ID.Text)).First();
-                        dr["Name"] = txtE_Name.Text;
-                        dr["Age"] = txtE_Age.Text;
+                        DataRow dr = dt.Select(string.Format("Class_ID = {0}", txtE_ID.Text)).First();
+                        dr["Class_ID"] = txtID.Text;
+                        dr["Class_Name"] = txtName.Text;
+                        dr["Num"] = txtNum.Text;
+                        dr["Teacher"] = txtTeacher.Text;
                         da.Update(dt);
 
                         btnSearch_Click(null, null);
@@ -112,7 +116,7 @@ namespace WebApplication1
             {
                 using (SqlCommand cmd = cn.CreateCommand())
                 {
-                    cmd.CommandText = "select * from employees";
+                    cmd.CommandText = "select * from Class1";
 
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -126,7 +130,7 @@ namespace WebApplication1
                         ds.Clear();
                         da.Fill(ds);
                         DataTable dt = ds.Tables[0];
-                        DataRow dr = dt.Select(string.Format("EmployeeID = {0}", txtD_ID.Text)).First();
+                        DataRow dr = dt.Select(string.Format("Class_ID = {0}", txtD_ID.Text)).First();
                         dr.Delete();
                         da.Update(dt);
 
